@@ -16,15 +16,6 @@ ActiveRecord::Schema.define(version: 20140928201451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "microposts", force: true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
-
   create_table "projects", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -39,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140928201451) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "deadline"
-    t.boolean  "done"
+    t.boolean  "done",       default: false
     t.integer  "priority",   default: 0
   end
 
