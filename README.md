@@ -1,12 +1,14 @@
 # Ruby on Rails task: TODO list application
 
 
-
+-------------------------------------------------------------------------------
 Given tables:
 - tasks(id, name, status, project_id)
 - projects (id, name)
 
 Queries for:
+
+
 1. get all statuses, not repeating, alphabetically ordered
 
 select DISTINCT status from tasks order by status
