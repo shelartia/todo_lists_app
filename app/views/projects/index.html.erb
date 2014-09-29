@@ -1,0 +1,34 @@
+<% provide(:title, 'My TODO lists') %>
+<h3 style="text-align: center;">TODO LISTS</h3>
+<body>
+ <script>
+   $(document).ready(function(){
+     $("i").click( function(){
+       $(this).parent().parent().parent().find('#td-default').toggle();
+	   $(this).parent().parent().parent().find('#td-form').toggle();
+	   $(this).parent().parent().parent().find('#edit-project-default').toggle();
+	   $(this).parent().parent().parent().find('#edit-project-form').toggle();
+     });
+	 
+	 $("tr").hover( function(){
+       $(this).find("#icons").toggle();
+     });
+	 $(".panel-heading").hover( function(){
+       $(this).find("#head_icons").toggle();
+     });
+
+    });
+ </script>
+<div id="projects">
+  <%= render @projects %>
+</div>
+
+
+<span style="text-align: center;">
+ <%= form_for(Project.new,remote: true) do |f| %>
+   <%= button_tag class:"btn btn-large btn-primary" do%>
+     <i class="icon-plus"></i> Add TODO list
+   <% end %>
+ <% end %>
+</span>
+</body>

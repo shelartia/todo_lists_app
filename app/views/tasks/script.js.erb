@@ -1,0 +1,18 @@
+$('#projects').html("<%= j (render @projects) %>");
+$(document).ready(function(){
+     $("i").click( function(){
+       $(this).parent().parent().parent().find('#td-default').toggle();
+	   $(this).parent().parent().parent().find('#td-form').toggle();
+	   $(this).parent().parent().parent().find('#edit-project-default').toggle();
+	   $(this).parent().parent().parent().find('#edit-project-form').toggle();
+     });
+	 
+	 $("tr").hover( function(){
+       $(this).find("#icons").toggle();
+     });
+	 
+	 $(".panel-heading").hover( function(){
+       $(this).find("#head_icons").toggle();
+     });
+
+    });
